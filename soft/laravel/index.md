@@ -2,4 +2,5 @@
 
 # 索引
 
-## 路由学习 [route.md](./route.md)
+## [目录学习](./dir.md)
+## [路由学习](./route.md)

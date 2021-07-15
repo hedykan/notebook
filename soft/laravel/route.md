@@ -11,8 +11,46 @@
 ./routes/*  
 
 # 路由书写方法
+1. 绝对路由访问  
+
+例子：  
 ```php
 Route::get('/', function() {
     echo "hello world";
 });
+```
+
+2. 相对路由访问  
+
+例子：  
+```php
+// 必传
+Route::get('/{data}', function($data) {
+    echo "hello world";
+});
+// 非必传
+Route::get('/{data?}', function($data = NULL) {
+    echo "hello world";
+});
+```
+
+3. 路由群组  
+
+说明：由于部分路由具有相同的前缀，如：  
+```
+index/list
+index/get
+```
+为了方便书写和简化代码，引入了路由群组概念   
+以下代码具有相同前缀，可以为：  
+```
+index/*
+```
+例子：  
+```php
+Route::group(['prefix' => 'index'], function(){
+    Route::get('/{data?}', function($data = NULL) {
+        echo "hello world";
+    });
+})
 ```
