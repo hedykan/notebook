@@ -44,8 +44,25 @@
     protected $guarded = ['id'];
     ```
 
-## 模型操作
+## 模型操作[文档](https://learnku.com/docs/laravel/8.x/queries/9401#976737)
 1. 增
+    ```php
+    $model = new Model;
+    // ar模式
+    $model->name = 'name';
+    $model->save();
+    // create模式
+    $input = $request->only(['username', 'password']);
+    $model->create($input);
+    ```
 2. 删
 3. 改
 4. 查
+    ```php
+    $model = new Model;
+    // 通过主键查找
+    $model->find($id); // 回对象
+    $model->find($id)->toArray(); // 回数组;
+    // 条件查找
+    $model->where($condition)->first();
+    ```

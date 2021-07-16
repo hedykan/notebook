@@ -75,7 +75,12 @@
     ]
     */
     ```
-4. hes方法
+4. only方式
+    ```php
+    $res = $request->only(['username', 'password']);
+    dd($res);
+    ```
+5. hes方法
     ```php
     // 判断key是否存在
     $res = $request->has('id');
