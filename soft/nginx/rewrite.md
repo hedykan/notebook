@@ -23,7 +23,7 @@
     ### 使用方式
     ```
     if(condition) {
-        // operate
+        # 操作
     }
     ```
     ### 特殊参数
@@ -35,6 +35,32 @@
         判断请求的目录或文件是否存在使用
     4. -x !-x  
         判断请求的文件是否可执行
+
+3. rewrite重写指令
+    重写指令，可以将获取到的uri进行重写
+    ### 使用区域
+    1. server块
+    2. location块
+    3. if块
+    ### 使用方式
+    ```
+    # regex为匹配，replacement为替换
+    rewrite ^regex$ replacement [flag];
+    # 如果使用括号()表达式，可以用$1, $2在重写的时候使用
+    rewrite ^(.*)$ /index.php/$1;
+    ```
+    ### 注意
+    在重写后一定要注意是否能被外部location匹配到，比如  
+    ```
+    # 重写后为index.php/(.*)
+    rewrite ^(.*)$ /index.php/$1;
+    location ~ \.php$ {
+        # 这个块无法匹配中，因为这里匹配的是(.*)\.php
+    }
+    location ~ \.php(.*)$ {
+        # 这里可以匹配中，因为这里匹配的是(.*)\.php(.*)
+    }
+    ```
 
 ## 常用预定义变量
 1. $uri $document_uri  
