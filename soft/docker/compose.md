@@ -20,6 +20,7 @@ services:                   # 服务项
 
     php_fpm:
         # image: php:fpm
+        user: "1000:1000"   # 挂载用户id，否则会遇到权限不足的问题
         build: .            # 编译的dockerfile
         volumes: 
             - /home/www/:/var/www/html
