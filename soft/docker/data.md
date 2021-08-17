@@ -9,6 +9,7 @@ docker -v [source]:[destination]
 # 注意：有些只读文件映射后将无法修改，如nginx.conf
 # nginx修改配置应该修改/etc/nginx/conf.d/default.conf
 ```
+挂载的位置如果不指定默认在`/var/lib/docker/volumes`中，Windows在`\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes`中  
 
 ## 注意
 挂载的卷仍属于被挂载目录的用户，如果没有指定用户`--user ${uid}:${gid}`，则后续的操作以及产生的数据会出现权限不足的情况

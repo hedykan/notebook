@@ -11,7 +11,8 @@ docker exec acme.sh  --issue  -d mydomain.com -d www.mydomain.com  --webroot  /h
 ## api申请方式
 因为用的是dns服务商是阿里云，所有用阿里云的[dnsapi](https://usercenter.console.aliyun.com/#/manage/ak)  
 其他厂商的DNS API信息请参考以下[链接](https://github.com/acmesh-official/acme.sh/tree/master/dnsapi)  
-[有关dns模式配置](https://blog.csdn.net/jz_youmayfly/article/details/103705335)
+[有关dns模式配置](https://blog.csdn.net/jz_youmayfly/article/details/103705335)  
+[泛域名配置](https://www.ioiox.com/archives/104.html)  
 
 ### 使用docker构建
 [docker版构建学习](https://zhuanlan.zhihu.com/p/45425683)
