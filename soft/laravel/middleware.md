@@ -40,5 +40,12 @@ function third() {
     return $response;
     ```
 
+## 使用
+1. 在路由中
+    ```php
+    // 使用middleware()函数
+    Route::middleware([ApiReturn::class, 'throttle:30,1'])->prefix('/adao')->group();
+    ```
+
 ## 注意
 `$response`的操作注意是否有getData，可以通过`method_exists()`来判断
