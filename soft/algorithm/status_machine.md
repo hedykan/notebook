@@ -11,6 +11,12 @@ type StatusMachineNode struct {
 	Handle     func(in byte) // 操作函数，一般为本状态内接收的参数进行运算
 }
 
+const (
+	nonId = 0
+	numId = 1
+	strId = 2
+)
+
 var machineMap map[int]StatusMachineNode
 var buff []int
 
