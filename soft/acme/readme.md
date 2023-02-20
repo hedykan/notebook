@@ -28,6 +28,7 @@ docker run --rm  -itd  \
 # 首先
 docker exec acme.sh --register-account -m 我的邮箱
 
+# 证书出问题可以用以下方式重新申请
 # 泛域名证书需要这样申请
 docker exec acme.sh --issue --dns dns_ali -d juhuan.store -d '*.juhuan.store'
 ```
