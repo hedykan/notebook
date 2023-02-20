@@ -35,6 +35,9 @@ docker exec acme.sh --issue --dns dns_ali -d juhuan.store -d '*.juhuan.store'
 
 ## 证书装载
 ```bash
+# 证书更新完后需要将其装载到相应的位置
+# key-file 是key的存放地址
+# reloadcmd 是更新完证书后执行的命令，可以是重启nginx之类的
 # 装载证书
 docker exec acme.sh --install-cert -d juhuan.store \
 --key-file       /home/www/cert/juhuan.store/key.pem  \
