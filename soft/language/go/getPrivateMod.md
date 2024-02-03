@@ -7,5 +7,13 @@
 3. 删除记录
 `git config --global --unset url."https://${{GITHUB_TOKEN}}@github.com/".insteadOf`
 
-## 问题
+### 问题
 在`go clean -modcache`后会失效，需要重新申请token并设置
+
+## 通过git clone后手动在go.mod中配置
+1. 先`git clone git@github.com:xxx/xxx.git`
+2. 在go.mod中编辑
+```go.mod
+    require github.com/xxx/xxx v0.0.1
+    replace github.com/xxx/xxx => ../xxx
+```
