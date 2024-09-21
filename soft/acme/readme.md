@@ -48,3 +48,8 @@ docker exec acme.sh --install-cert -d juhuan.store \
 ssl_certificate /home/www/cert/image.juhuan.store/cert.pem;
 ssl_certificate_key /home/www/cert/image.juhuan.store/key.pem;
 ```
+
+docker exec acme_acme.sh_1 --install-cert -d kgnmb.com \
+--key-file       /home/www/cert/kgnmb.com/key.pem  \
+--fullchain-file /home/www/cert/kgnmb.com/cert.pem \
+--reloadcmd     ""
